@@ -9,7 +9,7 @@
     $order_uid = 'hello@hello.com';  # 订单对应的用户id
     $name = $_GET['name'];  # 订单商品名称
     $pay_type = 'wechat';    # 付款方式
-    $notify_url = 'http://jiudiancha.club/notify_url.php';   # 回调通知地址
+    $notify_url = 'http://'.$_SERVER['HTTP_HOST'].'/bufpay_callback_demo.php';   # 回调通知地址
     $return_url = $_GET['return_url'];   # 支付成功页面跳转地址
 
     $secret = '04182da4271d48a2b37a6d143a48fdf8';     # app secret, 在个人中心配置页面查看
