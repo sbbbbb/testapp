@@ -156,19 +156,33 @@ export default {
         feedback_url: feedback_url,
         sign: sign
       };
-      this.$http
-        .jsonp(
-          "https://sug.so.360.cn/suggest?word=" +
-            this.keyword +
-            "&encodein=utf-8&encodeout=utf-8"
-        )
-        .then(function(res) {
-          this.myData = res.data.s;
-        });
 
-      this.$http.post(api_url, data).then(data => {
-        console.log("dddd" + JSON.stringify(data));
-      });
+      window.open(
+        location.host +
+          "bufpay_php_demo.php?" +
+          "price =" +
+          price +
+          "&order_id=" +
+          order_id +
+          "&name=" +
+          name +
+          "&return_url=" +
+          decodeURIComponent(return_url)
+      );
+
+      //   this.$http
+      //     .jsonp(
+      //       "https://sug.so.360.cn/suggest?word=" +
+      //         this.keyword +
+      //         "&encodein=utf-8&encodeout=utf-8"
+      //     )
+      //     .then(function(res) {
+      //       this.myData = res.data.s;
+      //     });
+
+      //   this.$http.post(api_url, data).then(data => {
+      //     console.log("dddd" + JSON.stringify(data));
+      //   });
     },
     cancel() {},
     // &event是实参，表示event对象
