@@ -125,11 +125,11 @@ export default {
     ok() {
       var name = this.getUrlParam("id") ? this.getUrlParam("id") : "yy";
       var pay_type = "wechat";
-      var price = 0.01;
+      var price = 19.99;
       var order_id = "111";
       var order_uid = "sdfsdf";
       var notify_url = location.host + "notify_url.php"; // 回调通知地址
-      var return_url = location.host + "?sfz=" + this.keyword; // 支付成功页面跳转地址
+      var return_url = "http://" + location.host + "?sfz=" + this.keyword; // 支付成功页面跳转地址
       var feedback_url = "";
       var secret = "04182da4271d48a2b37a6d143a48fdf8"; // app secret, 在个人中心配置页面查看
 
@@ -158,16 +158,15 @@ export default {
       };
 
       window.open(
-        location.host +
-          "bufpay_php_demo.php?" +
-          "price =" +
+          "/bufpay_api_demo.php?" +
+          "price=" +
           price +
           "&order_id=" +
           order_id +
           "&name=" +
           name +
           "&return_url=" +
-          decodeURIComponent(return_url)
+          encodeURIComponent(return_url)
       );
 
       //   this.$http

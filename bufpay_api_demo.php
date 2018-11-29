@@ -21,21 +21,23 @@
 
     $sign = sign(array($name, $pay_type, $price, $order_id, $order_uid, $notify_url, $return_url, $secret));
 
+   echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];
 
-echo '<html>
-      <head><title>redirect...</title></head>
-      <body>
-          <form id="post_data" action="'.$api_url.'" method="post">
-              <input type="hidden" name="name" value="'.$name.'"/>
-              <input type="hidden" name="pay_type" value="'.$pay_type.'"/>
-              <input type="hidden" name="price" value="'.$price.'"/>
-              <input type="hidden" name="order_id" value="'.$order_id.'"/>
-              <input type="hidden" name="order_uid" value="'.$order_uid.'"/>
-              <input type="hidden" name="notify_url" value="'.$notify_url.'"/>
-              <input type="hidden" name="return_url" value="'.$return_url.'"/>
-              <input type="hidden" name="sign" value="'.$sign.'"/>
-          </form>
-          <script>document.getElementById("post_data").submit();</script>
-      </body>
-      </html>';
+
+ echo '<html>
+       <head><title>redirect...</title></head>
+       <body>
+           <form id="post_data" action="'.$api_url.'" method="post">
+               <input type="hidden" name="name" value="'.$name.'"/>
+               <input type="hidden" name="pay_type" value="'.$pay_type.'"/>
+               <input type="hidden" name="price" value="'.$price.'"/>
+               <input type="hidden" name="order_id" value="'.$order_id.'"/>
+               <input type="hidden" name="order_uid" value="'.$order_uid.'"/>
+               <input type="hidden" name="notify_url" value="'.$notify_url.'"/>
+               <input type="hidden" name="return_url" value="'.$return_url.'"/>
+               <input type="hidden" name="sign" value="'.$sign.'"/>
+           </form>
+           <script>document.getElementById("post_data").submit();</script>
+       </body>
+       </html>';
 ?>
