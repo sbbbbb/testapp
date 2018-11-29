@@ -4,10 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
+import VueResource from 'vue-resource';
 
 Vue.use(iView);
+Vue.use(VueResource);
+
 // var vueResource = require('vue-resource');
-// Vue.use(vueResource);
 
 /* eslint-disable no-new */
 new Vue({
