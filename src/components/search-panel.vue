@@ -158,7 +158,7 @@ export default {
       };
 
       window.open(
-          "/bufpay_api_demo.php?" +
+        "/bufpay_api_demo.php?" +
           "price=" +
           price +
           "&order_id=" +
@@ -242,7 +242,7 @@ export default {
         setTimeout(() => {
           this.$Spin.hide();
           this.showModal = true;
-        }, 300);
+        }, 3000);
       }
 
       //  this.$Modal.success({
@@ -275,7 +275,6 @@ export default {
       this.searchIndex = index;
     },
     IdentityCodeValid: function(code) {
-      return true;
       var city = {
         11: "北京",
         12: "天津",
